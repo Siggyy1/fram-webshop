@@ -90,6 +90,8 @@ The chatbot responses depend on the OpenAI API and may vary
 
 If you click the basket, it will take you to the product site, and there is the only place it will show. But did not have time to fix that problem. 
 
+Due to some techinal problems with github, I had to make a new repository so there is no good commit log. (I accidentaly added the .env file to github which had my OpenAi Apikey, so for security reasons I just deleted the other repo and made a new one)
+
 ### Future Improvements:
 
 Possible future improvements include:
