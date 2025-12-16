@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FRAM — Chat</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <script defer src="js/main.js"></script>
+  <script defer src="js/chat.js"></script>
+</head>
+<body class="bg-primary chat-only">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <button
+      class="icon-btn"
+      id="menuBtn"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="drawer"
+    >
+      ☰
+    </button>
+
+    <a class="brand" href="index.html">FRAM</a>
+
+    <a class="cart-pill" href="products.html#checkout" aria-label="Basket">
+      <span class="cart-dot" aria-hidden="true"></span>
+      <span id="cartCount" class="cart-count" aria-live="polite">0</span>
+    </a>
+  </header>
+
+  <!-- Drawer menu -->
+  <nav class="drawer" id="drawer" aria-label="Main">
+    <button class="icon-btn drawer-close" id="closeBtn" aria-label="Close menu">✕</button>
+
+    <div class="drawer-links">
+      <a href="products.html">PRODUCTS</a>
+      <a href="chat.html" aria-current="page">CHAT</a>
+    </div>
+
+    <a class="drawer-checkout" href="products.html#checkout">CHECKOUT</a>
+  </nav>
+
+  <!-- Chat -->
+  <main id="main" class="chat-page">
+    <section class="chat-float" aria-label="Chatbot">
+      <div class="chatbox">
+
+        <div id="chatLog" class="chat-log" aria-live="polite"></div>
+
+        <form id="chatForm" class="chat-form" novalidate>
+          <label for="chatInput" class="sr-only">Message</label>
+          <input
+            id="chatInput"
+            type="text"
+            placeholder="What can I help you with today?"
+            required
+          />
+          <button
+            id="chatSend"
+            class="btn chat-send"
+            type="submit"
+            aria-label="Send message"
+          >
+            →
+          </button>
+        </form>
+
+        <p id="chatError" class="chat-error" hidden></p>
+        <p class="chat-privacy">
+          Privacy note: Do not enter personal sensitive information.
+          The chatbot answers questions about the service and partner farms.
+        </p>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

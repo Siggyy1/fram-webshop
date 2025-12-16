@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FRAM — Sustainable Food Delivery</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/main.js"></script>
+  <script defer src="js/products.js"></script>
+</head>
+<body class="bg-primary">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <button class="icon-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      ☰
+    </button>
+
+    <a class="brand" href="index.html" aria-label="FRAM home">FRAM</a>
+
+    <a class="cart-pill" href="products.html" aria-label="Basket">
+      <span class="cart-dot" aria-hidden="true"></span>
+      <span id="cartCount" class="cart-count" aria-live="polite">0</span>
+    </a>
+  </header>
+
+  <nav class="drawer" id="drawer" aria-label="Main">
+  <button class="icon-btn drawer-close" id="closeBtn" aria-label="Close menu">✕</button>
+
+  <div class="drawer-links">
+    <a href="products.html">PRODUCTS</a>
+    <a href="chat.html">CHAT</a>
+  </div>
+
+  <a class="drawer-checkout" href="products.html#checkout">CHECKOUT</a>
+</nav>
+
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-overlay">
+        <div class="hero-center">
+          <h1 class="logo">FRAM</h1>
+          <div class="hero-line" aria-hidden="true"></div>
+          <p class="hero-tagline">HOME DELIVERY FROM<br/>YOUR LOCAL FARMS</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards">
+      <article class="card">
+        <h2 class="h2">SHOP OUR SEASONAL<br/>SELECTION</h2>
+        <p class="accent">Updated every week</p>
+        <img class="card-img" src="assets/img/shop-selection.jpg" alt="Basket of vegetables" loading="lazy">
+        <p class="body muted">New produce is added continuously as time goes by and the seasons change.</p>
+        <a class="btn" href="products.html">Browse our selection</a>
+      </article>
+
+      <article class="card">
+        <h2 class="h2">ASK US ABOUT<br/>ANYTHING</h2>
+        <p class="accent">All your questions answered</p>
+        <img class="card-img" src="assets/img/go-to-chat.jpg" alt="Farmer in a field" loading="lazy">
+        <p class="body muted">New produce is added continuously as time goes by and the seasons change.</p>
+        <a class="btn" href="chat.html">Go to chat</a>
+      </article>
+    </section>
+
+    <section class="how">
+      <div class="how-left">
+        <h2 class="h2 big">THIS IS HOW IT<br/>WORKS</h2>
+      </div>
+
+      <div class="how-right">
+        <div class="step">
+          <h3 class="sub">ORDER GROCERIES</h3>
+          <p class="body">Fram is a circular service that ensures your kitchen is always stocked with the essentials you need. Browse our seasonal selection, choose your items, and place your order online.</p>
+          <a class="link" href="products.html">See our stock here</a>
+        </div>
+        <div class="step">
+          <h3 class="sub">STOCK UP</h3>
+          <p class="body">Once your order arrives, unpack the produce and store it however it works best for you. Hold onto the containers—they’re yours to keep until your next order.</p>
+        </div>
+        <div class="step">
+          <h3 class="sub">SCAN &amp; REORDER</h3>
+          <p class="body">Ready for a refill? Grab the containers from your last order and scan the QR code with our app or your phone’s camera. This instantly adds the items back to your cart, making reordering a breeze.</p>
+        </div>
+        <div class="step">
+          <h3 class="sub">SWAP &amp; REUSE</h3>
+          <p class="body">When we deliver your new order, simply leave your empty containers outside. We’ll pick them up, clean them thoroughly, and reuse them for future deliveries.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="popular">
+      <h2 class="h2">POPULAR PRODUCE</h2>
+      <div class="grid" id="popularGrid"></div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo small">FRAM</div>
+          <div class="divider" aria-hidden="true"></div>
+          <h2 class="h2 white">STAY UPDATED</h2>
+          <p class="body white-muted">Sign up for our newsletter to be the first to know about new produce or other exciting news!</p>
+        </div>
+
+        <form class="newsletter" id="newsletterForm" novalidate>
+          <label class="sr-only" for="firstName">First name</label>
+          <input id="firstName" name="firstName" type="text" placeholder="First name" required minlength="2" />
+          <p class="field-error" id="firstNameError" role="alert"></p>
+
+          <label class="sr-only" for="email">E-mail address</label>
+          <input id="email" name="email" type="email" placeholder="E-mail address" required />
+          <p class="field-error" id="emailError" role="alert"></p>
+
+          <button class="btn light" type="submit">Send</button>
+          <p class="form-ok" id="newsletterOk" aria-live="polite"></p>
+        </form>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

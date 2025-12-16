@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FRAM — Products</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/main.js"></script>
+  <script defer src="js/products.js"></script>
+</head>
+
+<body class="bg-primary">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <button class="icon-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">☰</button>
+    <a class="brand" href="index.html">FRAM</a>
+
+    <!-- Basket button (opens popup) -->
+    <button class="cart-pill" id="basketBtn" type="button"
+      aria-label="Open basket" aria-haspopup="dialog" aria-controls="basketModal">
+      <span class="cart-dot" aria-hidden="true"></span>
+      <span id="cartCount" class="cart-count" aria-live="polite">0</span>
+    </button>
+  </header>
+
+  <nav class="drawer" id="drawer" aria-label="Main">
+  <button class="icon-btn drawer-close" id="closeBtn" aria-label="Close menu">✕</button>
+
+  <div class="drawer-links">
+    <a href="products.html">PRODUCTS</a>
+    <a href="chat.html">CHAT</a>
+  </div>
+
+  <a class="drawer-checkout" href="products.html#checkout">CHECKOUT</a>
+</nav>
+
+
+  <main id="main" class="page">
+    <header class="page-head">
+      <h1 class="h2">PRODUCE</h1>
+      <p class="body muted">
+        Explore our selection of seasonal produce, sourced directly from local farms to ensure peak freshness and quality.
+        Every item is chosen with care, supporting sustainable practices and bringing the best of the harvest to your table.
+      </p>
+    </header>
+
+    <section class="products">
+      <div class="products-grid" id="productsGrid" aria-live="polite"></div>
+    </section>
+  </main>
+
+    <section class="farms-section">
+        <div class="farms-grid">
+
+            <div class="farms-text">
+            <h2>SEE OUR<br>PARTNERING FARMS</h2>
+            </div>
+
+            <div class="farms-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15813.550529857781!2d10.613003765706898!3d60.30159132372003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4641a30c3be67c59%3A0x94dbad789ad47bba!2sBraastad%20Gaard!5e0!3m2!1sno!2sno!4v1765887161545!5m2!1sno!2sno"
+                title="Map showing partner farm location" 
+                width="600"
+                  height="450" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="site-footer">
+  <div class="footer-top">
+    <h2 class="footer-logo">FRAM</h2>
+  </div>
+
+  <div class="footer-body">
+    <h3 class="footer-title">STAY UPDATED</h3>
+
+    <p class="footer-text">
+      Sign up for our newsletter to be the first to know about new produce or other exciting news!
+    </p>
+
+    <form id="newsletterForm" class="newsletter" novalidate>
+      <label class="sr-only" for="firstName">First name</label>
+      <input id="firstName" required minlength="2" name="firstName" type="text" placeholder="First name" autocomplete="given-name" />
+
+      <label class="sr-only" for="email">E-mail address</label>
+      <div class="newsletter-row">
+        <input id="email" name="email" type="email" required placeholder="E-mail address" autocomplete="email" />
+        <button class="newsletter-send" type="submit" aria-label="Send newsletter signup">→</button>
+      </div>
+
+      <p class="form-error" id="firstNameError" aria-live="polite"></p>
+      <p class="form-error" id="emailError" aria-live="polite"></p>
+      <p class="form-ok" id="newsletterOk" aria-live="polite"></p>
+    </form>
+  </div>
+</footer>
+
+
+
+  <!-- Overlay + Basket modal (START HIDDEN) -->
+  <div class="overlay" id="overlay" hidden></div>
+
+  <section class="modal" id="basketModal" role="dialog" aria-modal="true"
+    aria-labelledby="basketTitle" hidden>
+    <header class="modal-head">
+      <h2 class="h2" id="basketTitle">BASKET</h2>
+      <button class="icon-btn" id="basketCloseBtn" type="button" aria-label="Close basket">✕</button>
+    </header>
+
+    <div class="modal-body">
+      <div id="basketList" class="basket-list"></div>
+
+      <div class="basket-summary">
+        <div class="basket-row">
+          <span class="sub">TOTAL</span>
+          <span class="sub" id="basketTotal">0 KR</span>
+        </div>
+
+        <div class="basket-actions">
+          <button class="btn light" id="clearCartBtn" type="button">Clear basket</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
