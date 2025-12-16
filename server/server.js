@@ -7,7 +7,6 @@ dotenv.config();
 
 const app = express();
 
-// Lås gjerne CORS til din frontend (valgfritt, men bra praksis)
 app.use(cors({ origin: ["http://127.0.0.1:5500", "http://localhost:5500"] }));
 app.use(express.json({ limit: "50kb" }));
 
@@ -48,7 +47,6 @@ app.post("/api/chat", async (req, res) => {
     const reply = completion.choices[0]?.message?.content?.trim() || "No reply";
     res.json({ reply });
   } catch (err) {
-    // Bedre feilhåndtering (viktig krav)
     const status = err?.status || 500;
 
     if (status === 429) {

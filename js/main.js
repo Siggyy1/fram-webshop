@@ -1,4 +1,3 @@
-// ---------- Drawer menu ----------
 const drawer = document.getElementById("drawer");
 const menuBtn = document.getElementById("menuBtn");
 const closeBtn = document.getElementById("closeBtn");
@@ -27,9 +26,6 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeDrawer();
 });
 
-
-
-// ---------- Cart helpers ----------
 const CART_KEY = "fram_cart_v1";
 
 function getCart(){
@@ -39,7 +35,7 @@ function getCart(){
 function setCart(items){
   localStorage.setItem(CART_KEY, JSON.stringify(items));
   updateCartCount();
-  renderBasket(); // only updates content if modal exists
+  renderBasket();
 }
 function addToCart(product){
   const cart = getCart();
@@ -61,7 +57,6 @@ function updateCartCount(){
   countEl.textContent = String(getCart().length);
 }
 
-// ---------- Basket modal ----------
 const basketBtn = document.getElementById("basketBtn");
 const basketModal = document.getElementById("basketModal");
 const basketCloseBtn = document.getElementById("basketCloseBtn");
@@ -95,7 +90,6 @@ function closeBasket(){
 }
 
 basketBtn?.addEventListener("click", () => {
-  // toggle
   if (basketModal && !basketModal.hidden) closeBasket();
   else openBasket();
 });
@@ -113,7 +107,6 @@ clearCartBtn?.addEventListener("click", () => {
   clearCart();
 });
 
-// IMPORTANT: renderBasket must NOT unhide the modal
 function renderBasket(){
   if (!basketList || !basketTotal) return;
 
@@ -153,7 +146,6 @@ function renderBasket(){
   });
 }
 
-// ---------- Newsletter validation (only if exists) ----------
 const newsletterForm = document.getElementById("newsletterForm");
 if (newsletterForm){
   newsletterForm.addEventListener("submit", (e) => {
@@ -187,7 +179,6 @@ if (newsletterForm){
   });
 }
 
-// expose
 window.FRAM = {
   getCart,
   setCart,
@@ -199,11 +190,9 @@ window.FRAM = {
   closeBasket
 };
 
-// init (DO NOT open modal)
 updateCartCount();
 renderBasket();
 
-// cross-tab sync
 window.addEventListener("storage", (e) => {
   if (e.key === CART_KEY) {
     updateCartCount();

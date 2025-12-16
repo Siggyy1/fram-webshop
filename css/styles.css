@@ -9,9 +9,6 @@
   --red-hover:#AE2E21;
   --blue-light:#E1EAF0;
   --green:#008F51;
-
-  /* WCAG: hvit tekst på #DC4131 er ca 4.33:1 (litt under 4.5).
-     Bruk mørkere rød i footer for AA. */
   --footer-red:#AE2E21;
 
   --font-serif:"Frank Ruhl Libre", serif;
@@ -58,7 +55,6 @@ body{ color:var(--text); font-family:var(--font-sans); }
   letter-spacing:0.02em; font-size:22px;
 }
 
-/* Basket pill (link or button) */
 .cart-pill{
   width:42px; height:26px; border-radius:999px;
   background:var(--green);
@@ -200,7 +196,7 @@ body{ color:var(--text); font-family:var(--font-sans); }
 
 .link{ color:var(--text); text-decoration:underline; }
 
-/* ---------- Cards section (Figma-like) ---------- */
+/* ---------- Cards section---------- */
 .cards{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -245,8 +241,6 @@ body{ color:var(--text); font-family:var(--font-sans); }
   padding:14px 18px;
   border-radius:10px;
 }
-
-/* ---------- How it works ---------- */
 .how{
   display:grid;
   grid-template-columns:1fr;
@@ -362,7 +356,7 @@ body{ color:var(--text); font-family:var(--font-sans); }
 .basket-row{ display:flex; justify-content:space-between; align-items:center; padding:6px 2px 10px; }
 .basket-actions{ display:flex; gap:10px; }
 
-/* ---------- Farms section (products page) ---------- */
+/* ---------- Products Page---------- */
 .farms-section{
   background:var(--bg-primary);
   border-top:1px solid #000;
@@ -496,7 +490,7 @@ body{ color:var(--text); font-family:var(--font-sans); }
   opacity:0.75;
 }
 
-/* ---------- Footer (index.html variant) ---------- */
+/* ---------- Footer ---------- */
 .footer{
   background:var(--footer-red);
   color:#fff;
@@ -543,7 +537,6 @@ body{ color:var(--text); font-family:var(--font-sans); }
 .field-error{ min-height:18px; margin:0; color:rgba(255,255,255,0.95); }
 .form-ok{ margin:0; color:rgba(255,255,255,0.95); }
 
-/* ---------- Responsive ---------- */
 @media (max-width: 900px){
   .cards{ grid-template-columns:1fr; }
   .card + .card{ border-left:none; border-top:1px solid rgba(0,0,0,0.25); }
@@ -564,14 +557,11 @@ body{ color:var(--text); font-family:var(--font-sans); }
   .products-grid{ grid-template-columns:repeat(3, 1fr); }
 }
 
-/* ===== PRODUCTS FOOTER (site-footer) – force everything under FRAM ===== */
-
 .site-footer{
   background: var(--footer-red);
   color: #fff;
 }
 
-/* samme “container” for begge rader */
 .site-footer .footer-top,
 .site-footer .footer-body{
   max-width: 1100px;
@@ -580,7 +570,6 @@ body{ color:var(--text); font-family:var(--font-sans); }
   padding-right: 48px;
 }
 
-/* FRAM + linje */
 .site-footer .footer-top{
   padding-top: 26px;
   padding-bottom: 16px;
@@ -595,15 +584,11 @@ body{ color:var(--text); font-family:var(--font-sans); }
   letter-spacing: 0.02em;
 }
 
-/* STAY UPDATED + form under FRAM (venstre) */
+/* STAY UPDATED + form under FRAM */
 .site-footer .footer-body{
   padding-top: 26px;
   padding-bottom: 56px;
-
-  /* NØKKELEN: ikke max-width:520 her */
   max-width: 1100px;
-
-  /* NØKKELEN: venstrejuster alt */
   display: block;
 }
 
@@ -620,13 +605,12 @@ body{ color:var(--text); font-family:var(--font-sans); }
   font-size: 14px;
   line-height: 1.5;
   color: rgba(255,255,255,0.88);
-  max-width: 520px; /* tekst-bredde som Figma */
+  max-width: 520px;
 }
 
-/* form under teksten, venstre */
 .site-footer .newsletter{
   margin: 0;
-  max-width: 600px; /* bredde på feltene som i figma */
+  max-width: 600px;
   width: 100%;
   display: grid;
   gap: 14px;
@@ -640,7 +624,6 @@ body{ color:var(--text); font-family:var(--font-sans); }
   font-size: 14px;
 }
 
-/* email + send knapp på samme rad */
 .site-footer .newsletter-row{
   display: grid;
   grid-template-columns: 1fr 64px;
@@ -658,8 +641,6 @@ body{ color:var(--text); font-family:var(--font-sans); }
   color: #000;
   font-size: 22px;
 }
-
-/* mobile padding */
 @media (max-width: 768px){
   .site-footer .footer-top,
   .site-footer .footer-body{

@@ -28,7 +28,6 @@ function productCard(p){
   `;
 }
 
-/** Safe cart helpers (works even if window.FRAM is missing) */
 function getCartSafe(){
   try {
     if (window.FRAM?.getCart) return window.FRAM.getCart();
@@ -63,7 +62,6 @@ function updateHeaderCount(){
   el.textContent = String(cart.length);
 }
 
-/** Bind add-to-basket clicks for a grid element */
 function bindGridAddButtons(container){
   if (!container) return;
   container.addEventListener("click", (e) => {
@@ -82,19 +80,16 @@ function bindGridAddButtons(container){
   });
 }
 
-/* Render products page grid */
 const grid = document.getElementById("productsGrid");
 if (grid){
   grid.innerHTML = products.map(productCard).join("");
   bindGridAddButtons(grid);
 }
 
-/* Render popular on index */
 const popular = document.getElementById("popularGrid");
 if (popular){
   popular.innerHTML = products.slice(0,3).map(productCard).join("");
   bindGridAddButtons(popular);
 }
 
-/* Always update count on load */
 updateHeaderCount();
